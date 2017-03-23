@@ -10,6 +10,12 @@ const URL = `http://dev.markitondemand.com/MODApis/Api/v2/InteractiveChart/json?
 get(URL, res => {
 	let rawData = ''
 
+  const statusCode = res.statusCode
+  const contentType = res.headers['content-type']
+  console.log(statusCode)
+  console.log(contentType)
+
+
 
   res.on('data', (chunk) => rawData += chunk)
   res.on('end', () => {
